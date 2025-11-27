@@ -1,0 +1,449 @@
+/* ================================
+   ESTILOS FUTURISTAS E INNOVADORES
+   ================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --neon-blue: #00d4ff;
+  --neon-purple: #b700ff;
+  --neon-pink: #ff00ea;
+  --neon-cyan: #00fff2;
+  --dark-bg: #0a0e27;
+  --darker-bg: #050816;
+  --card-bg: rgba(15, 23, 42, 0.8);
+  --glass-bg: rgba(30, 41, 59, 0.4);
+  --glow-intensity: 0 0 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rajdhani', sans-serif;
+  background: linear-gradient(135deg, #0a0e27 0%, #1a0b2e 50%, #16213e 100%);
+  color: #e0e7ff;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Fondo Animado con Partículas */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(183, 0, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(255, 0, 234, 0.05) 0%, transparent 50%);
+  animation: backgroundPulse 15s ease-in-out infinite;
+  z-index: -1;
+}
+
+@keyframes backgroundPulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* Grid Futurista de Fondo */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: gridMove 20s linear infinite;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@keyframes gridMove {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(50px, 50px); }
+}
+
+/* Contenedor Principal */
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+/* Headers Futuristas */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple), var(--neon-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+  animation: textGlow 3s ease-in-out infinite;
+}
+
+@keyframes textGlow {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.3); }
+}
+
+/* Botones Futuristas */
+.btn-primary,
+button[type="submit"],
+.button {
+  position: relative;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 16px 40px;
+  background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+  border: 2px solid transparent;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 
+    0 0 20px rgba(0, 212, 255, 0.4),
+    0 0 40px rgba(183, 0, 255, 0.2),
+    inset 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.btn-primary::before,
+button[type="submit"]::before,
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s;
+}
+
+.btn-primary:hover,
+button[type="submit"]:hover,
+.button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 
+    0 0 40px rgba(0, 212, 255, 0.8),
+    0 0 60px rgba(183, 0, 255, 0.4),
+    inset 0 0 30px rgba(255, 255, 255, 0.2);
+  border-color: var(--neon-cyan);
+}
+
+.btn-primary:hover::before,
+button[type="submit"]:hover::before,
+.button:hover::before {
+  left: 100%;
+}
+
+.btn-primary:active,
+button[type="submit"]:active,
+.button:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+/* Inputs Futuristas */
+.input-field,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+  font-family: 'Rajdhani', sans-serif;
+  background: var(--glass-bg);
+  border: 2px solid rgba(0, 212, 255, 0.3);
+  border-radius: 12px;
+  padding: 14px 20px;
+  color: #e0e7ff;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.3),
+    inset 0 0 20px rgba(0, 212, 255, 0.05);
+}
+
+.input-field:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--neon-cyan);
+  background: rgba(30, 41, 59, 0.6);
+  box-shadow: 
+    0 0 30px rgba(0, 212, 255, 0.4),
+    0 0 50px rgba(0, 255, 242, 0.2),
+    inset 0 0 30px rgba(0, 212, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(224, 231, 255, 0.4);
+  font-style: italic;
+}
+
+/* Cards y Contenedores Glassmorphism */
+.card,
+.container,
+div[class*="bg-white"],
+div[class*="rounded"] {
+  background: var(--glass-bg) !important;
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 20px;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(0, 212, 255, 0.1),
+    inset 0 0 40px rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card::before,
+.container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    transparent,
+    rgba(0, 212, 255, 0.1),
+    transparent 30%
+  );
+  animation: borderRotate 8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes borderRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.card:hover,
+.container:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 255, 242, 0.5);
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.5),
+    0 0 60px rgba(0, 212, 255, 0.3),
+    inset 0 0 50px rgba(255, 255, 255, 0.08);
+}
+
+/* Links Futuristas */
+a {
+  color: var(--neon-cyan);
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+  transition: width 0.3s ease;
+  box-shadow: 0 0 10px var(--neon-blue);
+}
+
+a:hover {
+  color: var(--neon-blue);
+  text-shadow: 0 0 20px var(--neon-blue);
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* Badges y Etiquetas */
+.badge,
+span[class*="badge"],
+.tag {
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(183, 0, 255, 0.2));
+  border: 1px solid var(--neon-blue);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+  animation: badgePulse 2s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 212, 255, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(0, 212, 255, 0.6); }
+}
+
+/* Tablas Futuristas */
+table {
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  width: 100%;
+}
+
+th {
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(183, 0, 255, 0.2));
+  padding: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  color: var(--neon-cyan);
+}
+
+td {
+  background: var(--glass-bg);
+  padding: 14px;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+tr:hover td {
+  background: rgba(30, 41, 59, 0.6);
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+}
+
+/* Scrollbar Personalizado */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--darker-bg);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-pink));
+  box-shadow: 0 0 20px rgba(0, 255, 242, 0.8);
+}
+
+/* Selectores y Dropdowns */
+select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2300d4ff' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 20px;
+  padding-right: 45px;
+}
+
+/* Animación de Carga */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loader {
+  border: 4px solid rgba(0, 212, 255, 0.1);
+  border-top: 4px solid var(--neon-cyan);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+}
+
+/* Alertas Futuristas */
+.alert {
+  background: var(--glass-bg);
+  border-left: 4px solid var(--neon-cyan);
+  padding: 16px 24px;
+  border-radius: 12px;
+  backdrop-filter: blur(20px);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(0, 212, 255, 0.2);
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Efectos Hover Generales */
+.hoverable {
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.hoverable:hover {
+  transform: translateY(-5px);
+  filter: brightness(1.2);
+}
+
+/* Líneas de Escaneo */
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.scan-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+  animation: scan 3s linear infinite;
+  box-shadow: 0 0 20px var(--neon-cyan);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 { font-size: 24px; }
+  h2 { font-size: 20px; }
+  
+  .btn-primary,
+  button[type="submit"],
+  .button {
+    padding: 12px 30px;
+    font-size: 14px;
+  }
+}
